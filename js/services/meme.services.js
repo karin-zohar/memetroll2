@@ -82,7 +82,14 @@ function addRandomText() {
         { first: `what i feel like`, second: `before my morning coffee`, fontSize: 40  },
         { first: `i dont hate people`, second: `i just hate idiots, which is most people`, fontSize: 30  },
         { first: `sure i'm a people person`, second: `from a distance`, fontSize: 40  },
-        { first: `im a morning person`, second: `mourning my lack of sleep`, fontSize: 40 }
+        { first: `im a morning person`, second: `mourning my lack of sleep`, fontSize: 40 },
+        { first: `me when i find`, second: `the perfect meme template`, fontSize: 40 },
+        { first: `you only live once`, second: `better watch another episode`, fontSize: 40 },
+        { first: `after all why not?`, second: `why shouldn't i watch netflix until 4 am?`, fontSize: 30 },
+        // { first: ``, second: ``, fontSize: 40 },
+        // { first: ``, second: ``, fontSize: 40 },
+        // { first: ``, second: ``, fontSize: 40 },
+        // { first: ``, second: ``, fontSize: 40 }
     ]
     const pickRandomIdx = getRandomInt(0, randomTexts.length)
     const pickRandom = randomTexts[pickRandomIdx]
