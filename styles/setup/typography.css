@@ -1,0 +1,33 @@
+@font-face {
+    font-family: Lato;
+    src: url('../../fonts/lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: Impact;
+    src: url('../../fonts/Impact/impact.ttf')
+}
+
+@font-face {
+	font-family: Sigmar;
+	src: url('../../fonts/sigmar/Sigmar-Regular.ttf')
+}
+
+@font-face {
+	font-family: fa;
+	src: url("../../fonts/fa/fa-brands-400.ttf");
+}
+
+.fa::before {
+	font-family: fa;
+	font-weight: normal;
+}
+
+.fa.facebook::before {
+	content: "\f39e";
+}
+
+.fa.twitter::before {
+	content: "\f099";
+}
+

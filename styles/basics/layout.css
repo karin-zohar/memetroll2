@@ -1,0 +1,27 @@
+.main-layout {
+    display: grid;
+
+}
+
+/* gallery  */
+
+.gallery-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-flow: dense;
+    gap: 10px;
+    padding: var(--gallery-padding);
+    margin: 0 auto;
+}
+
+/* editor  */
+.editor-layout {
+    padding:0;
+    margin:0;
+    /* background-color: black; */
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: 2px 1fr 2px;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}

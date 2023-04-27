@@ -1,0 +1,16 @@
+footer .social-links-container {
+	display: flex;
+	justify-content: center;
+}
+
+footer .img-container:hover {
+	cursor: pointer;
+}
+
+footer .img-container.facebook:hover {
+	background-color: #4267b2;
+}
+
+footer .img-container.twitter:hover {
+	background-color: #1da1f2;
+}
