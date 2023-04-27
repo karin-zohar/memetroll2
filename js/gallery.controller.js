@@ -68,6 +68,8 @@ function switchPage(toPage) {
     const pages = [...document.querySelectorAll('.page')]
     pages.forEach(page => page.hidden = true)
     targetPage.hidden = false
+
+    if (toPage !== 'page-editor') resetMemeSettings()
 }
 
 function onImgInput(ev) {

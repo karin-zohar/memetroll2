@@ -106,7 +106,8 @@ function createTemplateFromUpload(img, onOpenImg) {
 }
 
 function getRandomTemplateId() {
-    const randomTemplate = getRandomInt(0, gTemplates.length)
+    const randomTemplateIdx = getRandomInt(0, gTemplates.length)
+    const randomTemplate = gTemplates[randomTemplateIdx]
     return randomTemplate.id
 }
 

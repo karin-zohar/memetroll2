@@ -4,7 +4,6 @@ let gCtx
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
 function initCanvas() {
-    console.log('init canvas')
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     resizeCanvas()
@@ -26,6 +25,7 @@ function renderMeme() {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         //draw text
         gMeme.lines.forEach(line => {
+            if (!line['coords']) setFirstLineCoords(getCanvasCoords('start'))
             const { x, y } = line['coords']
             drawText(line.text, x, y)
         })
