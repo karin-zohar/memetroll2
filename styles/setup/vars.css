@@ -1,6 +1,7 @@
 :root {
 
     /* palette */
+    --clr1: #720e9e;
     /* sizes */
     --gallery-padding: 10px;
     --canvas-height: 300px;

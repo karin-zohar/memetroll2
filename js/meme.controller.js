@@ -1,15 +1,16 @@
 'use strict'
 
-const CANVAS_HEIGHT = 300
 
 let gElCanvas
 let gCtx
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+const CANVAS_HEIGHT = 300
 
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     resizeCanvas()
+    // resizeEditor()
     setFirstLineCoords()
     renderMeme()
 }
@@ -41,9 +42,18 @@ function resizeCanvas() {
     gElCanvas.height = elContainer.offsetHeight
 }
 
+function resizeEditor() {
+    const elEditor = document.querySelector('.editor-layout')
+    const scaleX = window.innerWidth / gElCanvas.width;
+    const scaleY = window.innerHeight / gElCanvas.height;
+    const scaleToFit = Math.min(scaleX, scaleY);
+    elEditor.style.transformOrigin = "0 0"; //scale from top left
+    elEditor.style.transform = `scale(${scaleToFit})`;
+}
+
 function adjustCanvasContainerSize(templateId) {
     const elImg = document.querySelector(`.${templateId}`)
-    const {imgHeight, imgWidth} = getImgSize(elImg)
+    const { imgHeight, imgWidth } = getImgSize(elImg)
     const newCanvasWidth = (CANVAS_HEIGHT * imgHeight) / imgWidth
     const elContainer = document.querySelector('.canvas-container')
     elContainer.width = newCanvasWidth
@@ -77,7 +87,6 @@ function getCanvasCoords(linePlacement) {
 
 function drawText(text, x, y) {
     const lineSettings = getSelectedLine()
-    // console.log('lineSettings: ', lineSettings)
     const { font, fontSize, stroke, fill, align, linePlacement } = lineSettings
     if (!font) font = 'Impact'
     gCtx.lineWidth = 2

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
 <body class="main-layout" onload="onInit()">
     <header class="main-header">
         <div class="logo" onclick="switchPage('page-gallery')">Memetroll</div>
-        <article class="pages">
+        <article class="pages-container">
             <button class="gallery-btn" value="page-gallery" onclick="switchPage(this.value)">Home</button>
             <button class="my-memes-btn" value="page-my-memes" onclick="switchPage(this.value)">My Memes</button>
             <button class="about-btn" value="page-about" onclick="switchPage(this.value)">About</button>
@@ -22,45 +22,48 @@
     <main>
 
         <div class="page-gallery page">
-            <article>
-                <input class="upload-btn btn" type="file" name="image" value="Upload" onchange="onImgInput(event)" >
+            <header class="gallery-header">
+
+                <article>
+                    <input class="upload-btn btn" type="file" name="image" value="Upload" onchange="onImgInput(event)">
                 <button class="feeling-lucky-btn" onclick="onFeelingLucky()">Feeling lucky</button>
             </article>
             <article class="filters">
                 <form action="">
                     <label for="keywords-search">Search</label>
                     <input list="keywords" type="search" id="keyword-search" placeholder="search by keyword"
-                        oninput="onFilter(this.value)">
+                    oninput="onFilter(this.value)">
                     <datalist id="keywords">
                         <option value="funny">
-                        <option value="animals">
-                        <option value="vip">
-                        <option value="awkward">
-                        <option value="cute">
-                        <option value="all">
-
-                    </datalist>
-                </form>
-                <article class="keywords-container">
-                    <button class="keyword-btn all" value="all" onclick="onFilter(this.value)">all</button>
-                    <button class="keyword-btn cute" value="cute" onclick="onFilter(this.value)">cute</button>
-                    <button class="keyword-btn funny" value="funny" onclick="onFilter(this.value)">funny</button>
-                    <button class="keyword-btn vip" value="vip" onclick="onFilter(this.value)">vip</button>
+                            <option value="animals">
+                                <option value="vip">
+                                    <option value="awkward">
+                                        <option value="cute">
+                                            <option value="all">
+                                                
+                                            </datalist>
+                                        </form>
+                                        <article class="keywords-container">
+                                            <button class="keyword-btn all" value="all" onclick="onFilter(this.value)">all</button>
+                                            <button class="keyword-btn cute" value="cute" onclick="onFilter(this.value)">cute</button>
+                                            <button class="keyword-btn funny" value="funny" onclick="onFilter(this.value)">funny</button>
+                                            <button class="keyword-btn vip" value="vip" onclick="onFilter(this.value)">vip</button>
                     <button class="keyword-btn animals" value="animals" onclick="onFilter(this.value)">animals</button>
                     <button class="keyword-btn awkward" value="awkward" onclick="onFilter(this.value)">awkward</button>
 
                 </article>
 
             </article>
+        </header>
             <section class="gallery-container gallery-layout">
             </section>
         </div>
-
+        
         <div class="page-editor page">
             <article class="editor-layout">
-
+                
                 <section class="tools-container">
-                    <input class="add-text-input" type="text" oninput="onAddText(this.value)" placeholder="add text"> 
+                    <input class="add-text-input" type="text" oninput="onAddText(this.value)" placeholder="add text">
                     <button class="add-line-btn" onclick="onAddLine()">+</button>
                     <button class="delete-line-btn" onclick="onDeleteLine()">delete</button>
                     <input id="text-fill-color" type="color" value="#ffffff" oninput="onPicker('fill',this.value)">
@@ -75,33 +78,34 @@
                         <option value="arial">Arial</option>
                         <option value="cambria">Cambria</option>
                         <option value="david">David</option>
-                        
-                </select>
-                <select name="align" id="text-align" onchange="onPicker('align', this.value)">
-                    <option value="left">L</option>
-                    <option value="center">C</option>
-                    <option value="right">R</option>
-                </select>
-                <button class="move-line-up-btn" onclick="onMoveLineVertically(-10)">up</button>
-                <button class="move-line-down-btn" onclick="onMoveLineVertically(10)">down</button>
-                <button class="save-meme-btn" onclick="onSaveMeme()">Save to my memes</button>
-                <a href="#" class="download-btn btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
-                <button class="share-btn">share</button>
-                
-            </section>
-            <section class="canvas-container">
-                <canvas width="100" height="300"></canvas>
-            </section>
-        </article>
+
+                    </select>
+                    <select name="align" id="text-align" onchange="onPicker('align', this.value)">
+                        <option value="left">L</option>
+                        <option value="center">C</option>
+                        <option value="right">R</option>
+                    </select>
+                    <button class="move-line-up-btn" onclick="onMoveLineVertically(-10)">up</button>
+                    <button class="move-line-down-btn" onclick="onMoveLineVertically(10)">down</button>
+                    <button class="save-meme-btn" onclick="onSaveMeme()">Save to my memes</button>
+                    <a href="#" class="download-btn btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+                    <button class="share-btn">share</button>
+
+                </section>
+                <section class="canvas-container">
+                    <canvas width="100" height="300"></canvas>
+                </section>
+            </article>
         </div>
-        
+
         <div class="page-my-memes page" hidden>
             <h1>my memes page</h1>
             <section class="my-memes-gallery-container gallery-layout"></section>
 
         </div>
         <div class="page-about page" hidden>
-            <h1>about page</h1>
+            <h1>About Memetroll</h1>
+            <h1>About the developer</h1>
         </div>
 
     </main>

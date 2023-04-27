@@ -14,6 +14,11 @@
 }
 
 @font-face {
+	font-family: Luckiest Guy;
+	src: url(../../fonts/luckiestguy/LuckiestGuy-Regular.ttf);
+}
+
+@font-face {
 	font-family: fa;
 	src: url("../../fonts/fa/fa-brands-400.ttf");
 }

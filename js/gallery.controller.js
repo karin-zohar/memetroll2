@@ -24,7 +24,6 @@ function renderTemplates() {
 
 function renderMyMemesGallery() {
     const savedMemes = getUserMemes()
-    console.log('savedMemes: ', savedMemes)
     const elMyMemesGalleryContainer = document.querySelector('.my-memes-gallery-container')
     const strHTML = savedMemes.map(meme => `
     <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img ${meme.savedMemeId}" src="${meme.flatImg}" alt="new saved meme">

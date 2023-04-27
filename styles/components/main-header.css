@@ -1,0 +1,10 @@
+.main-header {
+    background-color: var(--clr1); 
+    display: flex;
+    align-content: space-between;
+}
+
+.pages-container {
+    align-self: center;
+    justify-self: end;
+}

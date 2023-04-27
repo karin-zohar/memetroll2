@@ -10,7 +10,9 @@
 @import 'basics/layout.css';
 
 /* COMPONENTS */
-@import 'components/header.css';
+@import 'components/main-header.css';
+@import 'components/gallery-header.css';
+@import 'components/logo.css';
 @import 'components/footer.css';
 @import 'components/gallery.css';
 @import 'components/canvas.css';

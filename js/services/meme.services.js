@@ -75,29 +75,32 @@ function addLine(text) {
 
 function addRandomText() {
     const randomTexts = [
-        { first: `just quickly fix this bug before bed`, second: `five hours later: Why is the sun rising?`, fontSize: 30},
-        { first: `realizing you're wrong`, second: `in the middle of an argument`, fontSize: 40 },
-        { first: `to meme or not to meme`, second: `that is the question`, fontSize: 40 },
-        { first: `the world doesn't hate you`, second: `you're just hungry`, fontSize: 40  },
-        { first: `what i feel like`, second: `before my morning coffee`, fontSize: 40  },
-        { first: `i dont hate people`, second: `i just hate idiots, which is most people`, fontSize: 30  },
-        { first: `sure i'm a people person`, second: `from a distance`, fontSize: 40  },
-        { first: `im a morning person`, second: `mourning my lack of sleep`, fontSize: 40 },
-        { first: `me when i find`, second: `the perfect meme template`, fontSize: 40 },
-        { first: `you only live once`, second: `better watch another episode`, fontSize: 40 },
-        { first: `after all why not?`, second: `why shouldn't i watch netflix until 4 am?`, fontSize: 30 },
-        // { first: ``, second: ``, fontSize: 40 },
-        // { first: ``, second: ``, fontSize: 40 },
-        // { first: ``, second: ``, fontSize: 40 },
-        // { first: ``, second: ``, fontSize: 40 }
+        { first: `just fix this bug before bed`, second: `...Why is the sun rising?` },
+        { first: `realizing youre wrong`, second: `mid argument` },
+        { first: `to meme or not to meme`, second: `that is the question` },
+        { first: `you dont hate everyone`, second: `youre just hungry` },
+        { first: `what i feel like`, second: `before my morning coffee` },
+        { first: `i dont hate people`, second: `just idiots, so most people` },
+        { first: `im a people person`, second: `from a distance` },
+        { first: `im a morning person`, second: `mourning my lack of sleep` },
+        { first: `me when i find`, second: `the perfect meme template` },
+        { first: `you only live once`, second: `watch another episode` },
+        { first: `me after`, second: `watching netflix until 4 am?` },
+        { first: `when life gives you lemons`, second: `squeeze into your enemys eyes` },
+        { first: `maybe if i open the fridge again`, second: `there will be new food in it` },
+        { first: `say i should smile more`, second: `one more time` },
+        { first: `me on my way to`, second: `make a bad decision` }
     ]
     const pickRandomIdx = getRandomInt(0, randomTexts.length)
     const pickRandom = randomTexts[pickRandomIdx]
     deleteSelectedLine()
-    addLine(pickRandom.first.toUpperCase())
-    updateLineSettings('fontSize', pickRandom.fontSize)
-    addLine(pickRandom.second.toUpperCase())
-    updateLineSettings('fontSize', pickRandom.fontSize)
+    const lines = [pickRandom.first, pickRandom.second]
+    lines.forEach(line => {
+        let fontSize = (line.length > 20) ? 25 : 40
+        addLine(line.toUpperCase())
+        updateLineSettings('fontSize', fontSize)
+    })
+
 }
 function deleteSelectedLine() {
     const selectedLine = getSelectedLine()

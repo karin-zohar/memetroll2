@@ -1,0 +1,10 @@
+ @media (min-width: 400px) {
+    :root {
+        --canvas-height: 500px;
+    } 
+    .editor-layout {
+         flex-direction: row;
+     }
+
+
+ }
