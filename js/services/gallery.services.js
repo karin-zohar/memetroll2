@@ -43,7 +43,14 @@ var gTemplates = [
     { 'title': 'putin', 'keywords': ['vip'] },
     { 'title': 'toy-story', 'keywords': ['awkward'] },
     { 'title': 'trump', 'keywords': ['vip'] },
-    { 'title': 'todiks-cat', 'keywords': ['animals','funny']}
+    { 'title': 'todiks-cat', 'keywords': ['animals','funny']},
+    { 'title': 'dancing-kids', 'keywords': ['funny']},
+    { 'title': 'drevil', 'keywords': ['awkward']},
+    { 'title': 'oprah-you-get-a', 'keywords': ['vip']},
+    { 'title': 'shahar-hasson', 'keywords': ['funny','vip']},
+    { 'title': 'sounds-of-music', 'keywords': ['cute']},
+    { 'title': 'trump-blue', 'keywords': ['vip']},
+    { 'title': 'underdog', 'keywords': ['animals','cute','funny']}
 ]
 
 let gCurrKeyword

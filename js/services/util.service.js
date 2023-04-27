@@ -13,3 +13,9 @@ function getRandomInt(min, max) {
 function createImgFromCanvas(canvas) {
     return canvas.toDataURL('image/jpeg') 
 }
+
+function getImgSize(img) {
+    const height = img.naturalHeight
+    const width = img.naturalWidth
+    return {imgHeight: height, imgWidth: width}
+}

@@ -17,7 +17,7 @@ function renderTemplates() {
     const templates = getTemplates()
     const elGalleryContainer = document.querySelector('.gallery-container')
     const strHTML = templates.map(template => `
-    <img onclick="onOpenImg('${template.id}')" class="gallery-img" src="${template.imgUrl}" alt="${template.title}">
+    <img onclick="onOpenImg('${template.id}')" class="gallery-img ${template.id}" src="${template.imgUrl}" alt="${template.title}">
     `)
     elGalleryContainer.innerHTML = strHTML.join('')
 }
@@ -27,7 +27,7 @@ function renderMyMemesGallery() {
     console.log('savedMemes: ', savedMemes)
     const elMyMemesGalleryContainer = document.querySelector('.my-memes-gallery-container')
     const strHTML = savedMemes.map(meme => `
-    <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img" src="${meme.flatImg}" alt="new saved meme">
+    <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img ${meme.savedMemeId}" src="${meme.flatImg}" alt="new saved meme">
     `)
     elMyMemesGalleryContainer.innerHTML = strHTML.join('')
 }
@@ -47,6 +47,7 @@ function onOpenImg(templateId) {
     const template = getTemplateById(templateId)
     switchPage('page-editor')
     updateMemeSettings('selectedImgId', template.id)
+    adjustCanvasContainerSize(templateId)
     renderMeme()
 }
 
@@ -54,6 +55,7 @@ function onOpenSavedMeme(savedMemeId) {
     const savedMeme = getSavedMemeById(savedMemeId)
     switchPage('page-editor')
     setMemeFromSavedMemes(savedMeme)
+    adjustCanvasContainerSize(savedMemeId)
     renderMeme()
 }
 
@@ -96,3 +98,4 @@ function onFeelingLucky() {
     onOpenImg(randomTemplateId)
     addRandomText()  
 }
+

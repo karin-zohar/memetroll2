@@ -1,4 +1,7 @@
 'use strict'
+
+const CANVAS_HEIGHT = 300
+
 let gElCanvas
 let gCtx
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
@@ -36,6 +39,14 @@ function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = elContainer.offsetHeight
+}
+
+function adjustCanvasContainerSize(templateId) {
+    const elImg = document.querySelector(`.${templateId}`)
+    const {imgHeight, imgWidth} = getImgSize(elImg)
+    const newCanvasWidth = (CANVAS_HEIGHT * imgHeight) / imgWidth
+    const elContainer = document.querySelector('.canvas-container')
+    elContainer.width = newCanvasWidth
 }
 
 function getCanvasCoords(linePlacement) {
