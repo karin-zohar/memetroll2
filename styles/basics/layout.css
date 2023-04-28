@@ -1,5 +1,6 @@
 .main-layout {
     display: grid;
+    grid-template-columns: 1fr;
 
 }
 
@@ -18,13 +19,9 @@
 /* editor  */
 .editor-layout {
     height: 600px;
-    /* padding: 1rem; */
+    padding: 8px;
     background-color: black;
-    /* width: var(--editor-width); */
-    /* display: grid;
-    grid-template-columns: 2px 1fr 2px;
-    grid-template-rows: 1fr 1fr;
-    gap: 10px; */
+ 
     display: flex;
     flex-direction: column;
     justify-content: space-evenly ;

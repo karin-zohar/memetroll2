@@ -8,15 +8,21 @@
     <title>MemeTroll</title>
 
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon/troll.png">
 </head>
 
 <body class="main-layout" onload="onInit()">
     <header class="main-header">
-        <div class="logo" onclick="switchPage('page-gallery')">Memetroll</div>
+        <div class="logo animated-logo" onclick="switchPage('page-gallery')">
+            <span>Me</span><span>me</span><span>tr</span><span>oll</span>
+        </div>
         <article class="pages-container">
-            <button class="gallery-btn" value="page-gallery" onclick="switchPage(this.value)">Home</button>
-            <button class="my-memes-btn" value="page-my-memes" onclick="switchPage(this.value)">My Memes</button>
-            <button class="about-btn" value="page-about" onclick="switchPage(this.value)">About</button>
+            <button class="collapsible menu" onclick="onCollapsible(this)">menu</button>
+            <article class="content flex column">
+                <button class="gallery-btn" value="page-gallery" onclick="switchPage(this.value)">Home</button>
+                <button class="my-memes-btn" value="page-my-memes" onclick="switchPage(this.value)">My Memes</button>
+                <button class="about-btn" value="page-about" onclick="switchPage(this.value)">About</button>
+            </article>
         </article>
     </header>
     <main>
@@ -52,16 +58,21 @@
                     <button class="keyword-btn awkward" value="awkward" onclick="onFilter(this.value)">awkward</button>
 
                 </article>
-
+                
             </article>
         </header>
-            <section class="gallery-container gallery-layout">
-            </section>
-        </div>
+        <section class="gallery-container gallery-layout">
+        </section>
         
-        <div class="page-editor page">
-            <article class="editor-layout">
-                
+        <section class="uploaded-img" hidden></section>
+    </div>
+    
+    <div class="page-editor page">
+        <article class="editor-layout">
+            
+            <section class="canvas-container">
+                <canvas width="100" height="300"></canvas>
+            </section>
                 <section class="tools-container">
                     <input class="add-text-input" type="text" oninput="onAddText(this.value)" placeholder="add text">
                     <button class="add-line-btn" onclick="onAddLine()">+</button>
@@ -92,25 +103,45 @@
                     <button class="share-btn">share</button>
 
                 </section>
-                <section class="canvas-container">
-                    <canvas width="100" height="300"></canvas>
-                </section>
             </article>
         </div>
 
         <div class="page-my-memes page" hidden>
-            <h1>my memes page</h1>
-            <section class="my-memes-gallery-container gallery-layout"></section>
+            <h2>My memes</h2>
+            <section class="my-memes-gallery-container gallery-layout">
+            </section>
+            <section class="no-memes-msg" hidden>
+                <h3>No memes here yet!</h3>
+                <button onclick="switchPage('page-gallery')">Pick a template</button>
+                <button>
+                    <input class="upload-btn btn" type="file" name="image" value="Upload" onchange="onImgInput(event)">
+                </button>
+            </section>
 
         </div>
         <div class="page-about page" hidden>
-            <h1>About Memetroll</h1>
-            <h1>About the developer</h1>
+            <article class="about-card">
+                <h2>About Memetroll</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, et.</p>
+            </article>
+            <article class="about-card">
+                <h2>About the developer</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, rerum.</p>
+            </article>
+
+            <section class="credits-container">
+                <button class="collapsible" onclick="onCollapsible(this)">Credits</button>
+                <article class="content">
+                    <div> Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons"> Smashicons </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div>
+                </article>
+
+            </section>
+
         </div>
 
     </main>
     <footer>
-        <div class="logo">Memetroll</div>
+        <div class="logo" onclick="switchPage('page-gallery')">Memetroll</div>
         <p>Connect with us!</p>
         <div class="social-links-container">
             <a href="#" class="img-container fa facebook"></a>

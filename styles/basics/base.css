@@ -10,6 +10,10 @@ main {
     width: 100%;
 }
 
+h2 {
+    color: var(--clr1);
+}
+
 button {
     cursor: pointer;
 }

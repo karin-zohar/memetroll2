@@ -1,0 +1,16 @@
+.collapsible {
+    background-color: var(--clr1);
+    color: var(--clr2);
+}
+
+.content {
+    height: max-content;
+    scale: 0;
+    overflow: hidden;
+    transform-origin: 0 0;
+    transition: 0.5s;
+}
+
+.active {
+    scale: 1;
+}

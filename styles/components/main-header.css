@@ -1,10 +1,11 @@
 .main-header {
     background-color: var(--clr1); 
     display: flex;
-    align-content: space-between;
+    justify-items: space-evenly;
 }
 
 .pages-container {
     align-self: center;
     justify-self: end;
 }
+

@@ -11,8 +11,6 @@ function onInit() {
     switchPage('page-gallery')
 }
 
-
-
 function renderTemplates() {
     const templates = getTemplates()
     const elGalleryContainer = document.querySelector('.gallery-container')
@@ -25,10 +23,19 @@ function renderTemplates() {
 function renderMyMemesGallery() {
     const savedMemes = getUserMemes()
     const elMyMemesGalleryContainer = document.querySelector('.my-memes-gallery-container')
-    const strHTML = savedMemes.map(meme => `
-    <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img ${meme.savedMemeId}" src="${meme.flatImg}" alt="new saved meme">
-    `)
-    elMyMemesGalleryContainer.innerHTML = strHTML.join('')
+    const elNoMemesMsg =  document.querySelector('.no-memes-msg')
+    let strHTML = ''
+    if (getUserMemes.length) {
+        strHTML = savedMemes.map(meme => `
+        <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img ${meme.savedMemeId}" src="${meme.flatImg}" alt="new saved meme">
+        `)
+        
+        elMyMemesGalleryContainer.innerHTML = strHTML.join('')
+        elNoMemesMsg.hidden = true
+
+    } else {
+        elNoMemesMsg.hidden = false
+    }
 }
 
 function renderKeywords() {
@@ -46,6 +53,7 @@ function onOpenImg(templateId) {
     const template = getTemplateById(templateId)
     switchPage('page-editor')
     updateMemeSettings('selectedImgId', template.id)
+    insertUploadedImgToDOM(template.id)
     adjustCanvasContainerSize(templateId)
     renderMeme()
 }
@@ -65,6 +73,7 @@ function onFilter(value) {
 }
 
 function switchPage(toPage) {
+
     const targetPage = document.querySelector(`.${toPage}`)
     const pages = [...document.querySelectorAll('.page')]
     pages.forEach(page => page.hidden = true)
@@ -92,9 +101,22 @@ function onUploadImg(img) {
     createTemplateFromUpload(img, onOpenImg)
 }
 
+function insertUploadedImgToDOM(templateId) {
+    const template = getTemplateById(templateId)
+    const elUploadedImg = document.querySelector('.uploaded-img')
+    const strHTML = `
+    <img onclick="onOpenImg('${template.id}')" class="gallery-img ${template.id}" src="${template.imgUrl}" alt="${template.title}">
+    `
+    elUploadedImg.innerHTML = strHTML
+}
+
 function onFeelingLucky() {
     const randomTemplateId = getRandomTemplateId()
     onOpenImg(randomTemplateId)
-    addRandomText()  
+    addRandomText()
 }
 
+function onCollapsible(elColl) {
+    const elContent = elColl.nextElementSibling
+    elContent.classList.toggle('active')
+}
