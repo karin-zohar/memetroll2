@@ -1,3 +1,38 @@
 .gallery-header {
-    background-color: var(--clr1);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "keywords keywords"
+    "search search"
+    "upload feeling-lucky";
+}
+
+.upload {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.upload-label {
+    grid-area: upload;
+    cursor: pointer;
+}
+
+.feeling-lucky-btn {
+    grid-area: feeling-lucky;
+}
+
+#keyword-search {
+    grid-area: search;
+    width: 90%; 
+    margin: auto;
+}
+
+.keywords-container {
+    grid-area: keywords;
+    margin: auto;
+}
+
+.keyword-btn:hover {
+    color: var(--clr1);
 }

@@ -4,13 +4,15 @@
 }
 
 .content {
-    height: max-content;
+    height: 0;
     scale: 0;
     overflow: hidden;
-    transform-origin: 0 0;
     transition: 0.5s;
 }
 
 .active {
+    width: 100%;
+    height: max-content;
+    display:flex;
     scale: 1;
 }

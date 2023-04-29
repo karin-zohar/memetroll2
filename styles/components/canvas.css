@@ -1,9 +1,6 @@
 .canvas-container {
     background-color: aqua;
-    grid-column: 2;
-    grid-row: 2;
-    /* width: 100%; */
-    height: var(--canvas-height)
+    height: var(--canvas-height);
 }
 
 canvas {

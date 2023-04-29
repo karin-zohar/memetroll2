@@ -1,9 +1,152 @@
 
+.page-editor {
+    height: 100%;
+}
 .tools-container {
-    
-    background-color: blueviolet;
-    grid-column:2;
-    grid-row:1;
-    height: 200px;
-    
+    box-sizing: border-box;
+    border: 3px solid var(--clr1);
+    border-radius: 2em;
+    padding-block: 1em;
+    height: var(--canvas-height);
+}
+
+.tools-container-layout {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: 
+    "add-text add-text add-text add-text add-line delete"
+    "fill-color fill-color stroke-color stroke-color bigger-font smaller-font"
+    "move-up move-down align align font font"
+    "save save download download share share";
+}
+
+.tool-btn {
+    height: 30px;
+    margin: auto;
+    padding: 0.5rem;
+    width: 80%;
+    text-align: center;
+    border-radius: 2em;
+    border: 2px solid var(--clr1);
+    background-color: lavender;
+    cursor: pointer;
+}
+
+.tool-btn:hover {
+    background-color: var(--clr2);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.tool-btn::after {
+    font-family: fa-regular;
+    padding-inline: 0.5m;
+}
+
+.tool-btn-large {
+    box-sizing: border-box;
+    padding-block-end: 2.5em;
+}
+.color-label {
+    box-sizing: border-box;
+    margin:auto;
+    text-align: center;
+    text-shadow: 2px 2px var(--clr1);
+    letter-spacing: 0.2rem;
+    color: var(--clr2);
+    font-weight: 700;
+    padding: 10px;
+    width: 90px;
+    height: 40px;
+    border-radius: 2rem;
+    border: 2px solid var(--clr1);
+    cursor: pointer;
+    background-image: linear-gradient(90deg, #FF0000 0%, #FF9600 12%, #FFFA00 26%, #1EFF00 37%, #00AAFF 58%, #8B00FF 74%, #8B00FF 74%, #8B00FF 87%, #8B00FF 100%);
+}
+
+.color-label:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.add-text-input {
+    grid-area: add-text;
+    margin: 0.5rem;
+    width: 150px;
+}
+
+.add-line-btn {
+    grid-area: add-line;
+}
+
+.add-line-btn::after {
+    content: '\2b'
+}
+.delete-line-btn {
+    grid-area: delete;
+}
+.delete-line-btn::after {
+    content: '\f2ed';
+}
+
+input[type="color"] {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.fill-color-label {
+    grid-area: fill-color;
+}
+.stroke-color-label {
+    grid-area: stroke-color;
+}
+
+.bigger-font-btn {
+    grid-area: bigger-font;
+}
+.smaller-font-btn {
+    grid-area: smaller-font;
+}
+
+.text-font-select {
+    grid-area: font;
+}
+
+.align-select {
+    grid-area: align;
+}
+
+.move-line-up-btn {
+    grid-area: move-up;
+}
+.move-line-up-btn::after {
+    content: '\f151'
+}
+.move-line-down-btn {
+    grid-area: move-down;
+}
+.move-line-down-btn::after {
+    content: '\f150'
+}
+
+.save-meme-btn {
+    grid-area: save;
+}
+.save-meme-btn::after {
+    content: '\f0c7'
+}
+
+.download-btn {
+    grid-area: download;
+    padding: 0;
+    line-height: 33px;
+}
+.download-btn::after {
+    content: '\f358';
+}
+
+.share-btn {
+    grid-area: share;
+}
+.share-btn::after {
+    content: '\f14d'
 }

@@ -1,11 +1,49 @@
 .main-header {
-    background-color: var(--clr1); 
     display: flex;
-    justify-items: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--clr1);
+}
+
+.main-nav {
+    background-color: var(--clr1);
+    position: relative;
+    margin-inline-end: 1rem;
+    
+}
+
+.menu-btn {
+    font-size: 1.5rem;
+    position: relative;
+    color: var(--clr2);
+    transition: 0.5s;
+    justify-self: end;
+    margin-inline-end: 1rem;
+}
+
+.menu-btn:hover {
+    scale: 1.2;
 }
 
 .pages-container {
-    align-self: center;
-    justify-self: end;
+    flex-direction: column;
+    transform-origin: top center;
+    position: relative;
+    height: min-content;
 }
 
+.main-nav button {
+    background: none;
+    border: 2px solid var(--clr2);
+    border-radius:2em;
+    color: var(--clr2);
+    padding-block: 0.5em;
+    margin: 0.2rem;
+    transition: 1.5s;
+    font-weight: 600;
+}
+
+.main-nav button:hover {
+    background-color: var(--clr2);
+    color: var(--clr1);
+}

@@ -2,15 +2,10 @@ footer {
 	background-color: var(--clr1);
 	display: flex;
 	justify-content: center;
+	grid-row: 3;
 }
 
-footer .logo {
-	/* order: 1; */
-}
 
-footer p {
-	/* order: 2; */
-}
 
 footer .social-links-container {
 	display: flex; 

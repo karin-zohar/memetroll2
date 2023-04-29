@@ -6,3 +6,50 @@
 .flex.column {
     flex-direction: column;
 }
+
+.flex.center {
+    margin: auto;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+/* buttons */
+
+.clean-btn {
+    background: none;
+    border: none;
+}
+
+.btn {
+    background-color: var(--clr1);
+    border: none;
+    color: var(--clr2);
+    font-weight: 600;
+    padding: 1em;
+    border-radius: 2em;
+    margin: 0.5em;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-color: var(--clr2);
+    border: 3px solid var(--clr1);
+    color: var(--clr1);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.box {
+    border: 3px solid var(--clr1);
+    border-radius: 2em;
+}
+/* sizes */
+.w-50 {
+    width: 50%;
+}
+
+/* margin  */
+
+.m-1 {
+    margin: 1rem;
+}

@@ -120,3 +120,10 @@ function onCollapsible(elColl) {
     const elContent = elColl.nextElementSibling
     elContent.classList.toggle('active')
 }
+
+function onToggleMenu() {
+	const elBtn = document.querySelector('.menu-btn');
+	const elPagesContainer = document.querySelector('.pages-container')
+	elPagesContainer.classList.toggle('active')
+	elBtn.innerText = elBtn.innerText === '☰' ? 'X' : '☰';
+}

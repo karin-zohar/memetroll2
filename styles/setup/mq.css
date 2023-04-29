@@ -1,10 +1,43 @@
  @media (min-width: 400px) {
     :root {
-        --canvas-height: 500px;
+        --canvas-height: 400px;
+        --site-width: 90%;
+        --canvas-margin: 50px auto;
     } 
+
+    /* header*/
+
+    .pages-container {
+        justify-self: end;
+        scale: 1;
+        flex-direction: row;
+        margin-inline-end: 1rem;
+    }
+    
+    .main-nav {
+        align-self: center;
+        width: max-content;
+        /* background-color: aqua; */
+    }
+
+    .menu-btn {
+        display: none;
+    }
+    .content {
+        height: max-content;
+    }
+
+    /* editor */
+
     .editor-layout {
          flex-direction: row;
      }
+    
 
-
+     /* gallery  */
+     .gallery-header {
+        grid-template-rows: 1fr;
+        grid-template-areas: "search keywords upload feeling-lucky";
+        margin:auto;
+     }
  }

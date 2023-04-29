@@ -4,7 +4,10 @@
     --clr1: #720e9e;
     --clr2: white;
     /* sizes */
-    --gallery-padding: 10px;
+    --site-width: max-content;
+    --layout-padding: 1rem;
+    --gallery-padding: 1px;
     --canvas-height: 300px;
-
+    --logo-size: 1.2em;
+    --canvas-margin: auto;
 }

@@ -1,19 +1,50 @@
 html {
     font-family: Lato, sans-serif;
+    height: 100%;
 }
 
-body{
+body {
     margin:0;
+    padding: 0;
+    height: 100%;
     box-sizing: border-box;
 }
 main {
-    width: 100%;
+    grid-row: 2;
+    
 }
 
 h2 {
     color: var(--clr1);
+    margin-inline-start: 2em;
+}
+
+p {
+    margin-inline-start: 2em;
 }
 
 button {
     cursor: pointer;
+}
+
+a {
+    color: var(--clr1);
+    text-decoration: none;
+}
+
+input[type="text"] , input[type="search"] {
+    font-size: 1rem;
+    color: black;
+    background-color: lavender;
+    margin: auto;
+    padding-block: .5rem;
+    border-radius: 2em;
+    border: 2px solid var(--clr1);
+    padding-inline-start: 2em;
+}
+
+input[type="text"]::placeholder , input[type="search"]::placeholder {
+    color: var(--clr1);
+    font-size: 1rem;
+    padding-inline-start: 2em;
 }

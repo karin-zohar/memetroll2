@@ -23,6 +23,11 @@
 	src: url("../../fonts/fa/fa-brands-400.ttf");
 }
 
+@font-face {
+	font-family: fa-regular;
+	src: url('../../fonts/fa-regular/fa-regular-400.ttf');
+}
+
 .fa::before {
 	font-family: fa;
 	font-weight: normal;

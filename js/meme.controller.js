@@ -57,6 +57,7 @@ function adjustCanvasContainerSize(templateId) {
     const newCanvasWidth = (CANVAS_HEIGHT * imgHeight) / imgWidth
     const elContainer = document.querySelector('.canvas-container')
     elContainer.width = newCanvasWidth
+    resizeCanvas()
 }
 
 function getCanvasCoords(linePlacement) {
