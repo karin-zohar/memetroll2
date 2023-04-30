@@ -4,7 +4,7 @@
 let gElCanvas
 let gCtx
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
-const CANVAS_HEIGHT = 300
+let canvasHeight = 300
 
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
@@ -52,10 +52,12 @@ function resizeEditor() {
 }
 
 function adjustCanvasContainerSize(templateId) {
+    console.log('adjusting')
     const elImg = document.querySelector(`.${templateId}`)
-    const { imgHeight, imgWidth } = getImgSize(elImg)
-    const newCanvasWidth = (CANVAS_HEIGHT * imgHeight) / imgWidth
     const elContainer = document.querySelector('.canvas-container')
+    canvasHeight = elContainer.offsetHeight
+    const { imgHeight, imgWidth } = getImgSize(elImg)
+    const newCanvasWidth = (canvasHeight * imgHeight) / imgWidth
     elContainer.width = newCanvasWidth
     resizeCanvas()
 }

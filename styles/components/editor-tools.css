@@ -142,6 +142,7 @@ input[type="color"] {
 }
 .download-btn::after {
     content: '\f358';
+    color: black;
 }
 
 .share-btn {
