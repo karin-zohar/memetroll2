@@ -8,6 +8,7 @@ body {
     padding: 0;
     height: 100%;
     box-sizing: border-box;
+    background-color: whitesmoke;
 }
 main {
     grid-row: 2;
@@ -24,6 +25,7 @@ p {
 }
 
 button {
+    font-family: Lato, sans-serif;
     cursor: pointer;
 }
 

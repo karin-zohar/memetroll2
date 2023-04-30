@@ -34,7 +34,7 @@
 
 .main-nav button {
     background: none;
-    border: 2px solid var(--clr2);
+    border: none;
     border-radius:2em;
     color: var(--clr2);
     padding-block: 0.5em;
@@ -47,3 +47,10 @@
     background-color: var(--clr2);
     color: var(--clr1);
 }
+
+.main-nav .current-page::after {
+    content: '';
+    color: var(--clr2);
+    
+}
+

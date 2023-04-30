@@ -19,7 +19,8 @@
         <button class="menu-btn clean-btn" onclick="onToggleMenu()">☰</button>
         <nav class="main-nav">
             <article class="pages-container content flex">
-                <button class="gallery-btn" value="page-gallery" onclick="switchPage(this.value)">Home</button>
+                <button class="gallery-btn current-page" value="page-gallery"
+                    onclick="switchPage(this.value)">Home</button>
                 <button class="my-memes-btn" value="page-my-memes" onclick="switchPage(this.value)">My Memes</button>
                 <button class="about-btn" value="page-about" onclick="switchPage(this.value)">About</button>
             </article>
@@ -31,37 +32,39 @@
             <header class="gallery-header full ">
 
 
-                    <input class="upload" id="upload-file" type="file" name="image" value="Upload" onchange="onImgInput(event)">
-                    <label class="btn upload-label" for="upload-file">Upload template</label>
-                    <button class="feeling-lucky-btn btn" onclick="onFeelingLucky()">Feeling lucky</button>
-                
-                
-                    
-                        <!-- <label for="keywords-search">Search</label> -->
-                        <input list="keywords" type="search" id="keyword-search" placeholder="search by keyword"
-                            oninput="onFilter(this.value)">
-                        <datalist id="keywords">
-                            <option value="funny">
-                            <option value="animals">
-                            <option value="vip">
-                            <option value="awkward">
-                            <option value="cute">
-                            <option value="all">
-                        </datalist>
-              
-                    <article class="keywords-container flex ">
-                        <article class="keywords">
-                            <button class="keyword-btn all clean-btn" value="all" onclick="onFilter(this.value)">all</button>
-                            <button class="keyword-btn cute clean-btn" value="cute" onclick="onFilter(this.value)">cute</button>
-                            <button class="keyword-btn funny clean-btn" value="funny" onclick="onFilter(this.value)">funny</button>
-                            <button class="keyword-btn vip clean-btn" value="vip" onclick="onFilter(this.value)">vip</button>
-                            <button class="keyword-btn animals clean-btn" value="animals" onclick="onFilter(this.value)">animals</button>
-                            <button class="keyword-btn awkward clean-btn" value="awkward" onclick="onFilter(this.value)">awkward</button>
-                        </article>
+                <input class="upload" id="upload-file" type="file" name="image" value="Upload"
+                    onchange="onImgInput(event)">
+                <label class="btn upload-label" for="upload-file">Upload template</label>
+                <button class="feeling-lucky-btn btn" onclick="onFeelingLucky()">Feeling lucky</button>
+                <input list="keywords" type="search" id="keyword-search" placeholder="search by keyword"
+                    oninput="onFilter(this.value)">
+                <datalist id="keywords">
+                    <option value="funny">
+                    <option value="animals">
+                    <option value="vip">
+                    <option value="awkward">
+                    <option value="cute">
+                    <option value="all">
+                </datalist>
 
+                <article class="keywords-container flex ">
+                    <article class="keywords">
+                        <button class="keyword-btn all clean-btn" value="all"
+                            onclick="onFilter(this.value)">all</button>
+                        <button class="keyword-btn cute clean-btn" value="cute"
+                            onclick="onFilter(this.value)">cute</button>
+                        <button class="keyword-btn funny clean-btn" value="funny"
+                            onclick="onFilter(this.value)">funny</button>
+                        <button class="keyword-btn vip clean-btn" value="vip"
+                            onclick="onFilter(this.value)">vip</button>
+                        <button class="keyword-btn animals clean-btn" value="animals"
+                            onclick="onFilter(this.value)">animals</button>
+                        <button class="keyword-btn awkward clean-btn" value="awkward"
+                            onclick="onFilter(this.value)">awkward</button>
                     </article>
 
-                
+                </article>
+
             </header>
             <section class="gallery-container gallery-layout">
             </section>
@@ -80,13 +83,19 @@
                     <input class="add-text-input" type="text" oninput="onAddText(this.value)" placeholder="add text">
                     <button title="add line" class="add-line-btn tool-btn" onclick="onAddLine()"></button>
                     <button title="delete line" class="delete-line-btn tool-btn" onclick="onDeleteLine()"></button>
-                    <label for="text-fill-color" class="fill-color-label color-label">fill</label>
-                    <input  id="text-fill-color" type="color" value="#ffffff" oninput="onPicker('fill',this.value)">
-                    <label for="text-stroke-color" class="stroke-color-label color-label">stroke</label>
-                    <input  id="text-stroke-color" type="color" value="#000000" oninput="onPicker('stroke',this.value)">
-                    <button title="increase font size" class="tool-btn bigger-font-btn" onclick="onChangeFontSize(5)">A+</button>
-                    <button title="decrease font size" class="tool-btn smaller-font-btn" onclick="onChangeFontSize(-5)">A-</button>
-                    <select title="choose font" class="tool-btn text-font-select" name="font" id="text-font" onchange="onPicker('font', this.value)">
+                    <label for="text-fill-color" class="fill-color-label color-label tool-btn">fill</label>
+                    <input id="text-fill-color" type="color" value="#ffffff" oninput="onPicker('fill',this.value)">
+                    <label for="text-stroke-color" class="stroke-color-label color-label tool-btn">stroke</label>
+                    <input id="text-stroke-color" type="color" value="#000000" oninput="onPicker('stroke',this.value)">
+                    <button title="increase font size" class="tool-btn bigger-font-btn" onclick="onChangeFontSize(5)">
+                        <img src="img/icons/increase-font-icon.png" alt="increase font">
+                    </button>
+                    <button title="decrease font size" class="tool-btn smaller-font-btn" onclick="onChangeFontSize(-5)">
+                        <img src="img/icons/decrease-font-icon.png" alt="decrease font">
+                    </button>
+
+                    <select title="choose font" class="tool-btn text-font-select" name="font" id="text-font"
+                        onchange="onPicker('font', this.value)">
                         <option value="impact">Impact</option>
                         <option value="Lato">Lato</option>
                         <option value="Sigmar">Sigmar</option>
@@ -94,18 +103,36 @@
                         <option value="arial">Arial</option>
                         <option value="cambria">Cambria</option>
                         <option value="david">David</option>
+                    </select>
 
-                    </select>
-                    <select title="choose text alignment" class="tool-btn align-select" name="align" id="text-align" onchange="onPicker('align', this.value)">
-                        <option class="align-left" value="left">Left</option>
-                        <option class="align-center" value="center">Center</option>
-                        <option class="align-right" value="right">Right</option>
-                    </select>
-                    <button title="move up" class="move-line-up-btn tool-btn" onclick="onMoveLineVertically(-10)"></button>
-                    <button title="move down" class="move-line-down-btn tool-btn" onclick="onMoveLineVertically(10)"></button>
-                    <button title="Save to my memes" class="save-meme-btn tool-btn" onclick="onSaveMeme()"></button>
-                    <a href="#" title="download meme" class="download-btn tool-btn" onclick="downloadImg(this)" download="my-img.jpg"></a>
-                    <button title="share" class="share-btn tool-btn"></button>
+                    <button class="align-right tool-btn" value="right" onclick="onPicker('align', this.value)">
+                        <img src="img/icons/align-to-right.png" alt="align to right">
+                    </button>
+                    <button class="align-center tool-btn" value="center" onclick="onPicker('align', this.value)">
+                        <img src="img/icons/center-text-alignment.png" alt="align to center">
+                    </button>
+                    <button class="align-left tool-btn" value="left" onclick="onPicker('align', this.value)">
+                        <img src="img/icons/align-to-left.png" alt="align to left">
+                    </button>
+
+                    <button title="move up" class="move-line-up-btn tool-btn" onclick="onMoveLineVertically(-10)">
+                        <img src="img/icons/up-arrow.png" alt="move line up">
+                    </button>
+                    <button title="move down" class="move-line-down-btn tool-btn" onclick="onMoveLineVertically(10)">
+                        <img src="img/icons/up-arrow.png" alt="move line down">
+                    </button>
+                    <button title="Save to my memes" class="save-meme-btn tool-btn" onclick="onSaveMeme()">
+                        <img src="img/icons/paper-clip.png" alt="save to my memes">
+                        save
+                    </button>
+                    <a href="#" title="download meme" class="download-btn tool-btn" onclick="downloadImg(this)"
+                        download="my-img.jpg">
+                        <img src="img/icons/download.png" alt="download meme">
+                    </a>
+                    <button title="share" class="share-btn tool-btn">
+                        <img src="img/icons/send.png" alt="share meme">
+                        share
+                    </button>
 
                 </section>
             </article>
@@ -115,13 +142,18 @@
             <h2>My memes</h2>
             <section class="my-memes-gallery-container gallery-layout">
             </section>
-            <section class="no-memes-msg flex center w-50" hidden>
-                <h3>No memes here yet!</h3>
-                <button class="btn" onclick="switchPage('page-gallery')">Pick a template</button>
-                <button>
-                    <input class="upload-btn btn" type="file" name="image" value="Upload" onchange="onImgInput(event)">
-                </button>
+            
+            <section class="no-memes-msg" hidden>
+                <article class="flex center column w-50">
+                    <h3>No memes here yet!</h3>
+                    <article>
+                        <button class="btn" onclick="switchPage('page-gallery')">Pick a template</button>
+                        <label for="upload-from-my-memes" class="btn clean-label">Upload your own</label>
+                            <input class="upload-input-my-memes btn none" type="file" name="image" value="Upload" id="upload-from-my-memes" onchange="onImgInput(event)">
+                    </article>
+                </article>
             </section>
+
 
         </div>
         <div class="page-about page" hidden>
@@ -146,17 +178,32 @@
                 <article class="content box">
                     <ul>
                         <li>
-                            <div> Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">
+                            <div> Icons made by <a href="https://www.flaticon.com/authors/smashicons"
+                                    title="Smashicons">
                                     Smashicons </a> from <a href="https://www.flaticon.com/"
                                     title="Flaticon">www.flaticon.com'</a></div>
                         </li>
                         <li>
-                            <a href="https://www.flaticon.com/free-stickers/girl" title="girl stickers">Girl stickers created by
+                            <a href="https://www.flaticon.com/free-stickers/girl" title="girl stickers">Girl stickers
+                                created by
                                 Stickers - Flaticon</a>
                         </li>
                         <li>
-                            <a href="https://www.flaticon.com/free-stickers/mask" title="mask stickers">Mask stickers created by
+                            <a href="https://www.flaticon.com/free-stickers/mask" title="mask stickers">Mask stickers
+                                created by
                                 bukeicon - Flaticon</a>
+                        </li>
+                        <li>
+                            <a href="https://www.flaticon.com/free-icons/attach" title="attach icons">Attach icons
+                                created by Smashicons - Flaticon</a>
+                        </li>
+                        <li>
+                            <a href="https://www.flaticon.com/free-icons/send" title="send icons">Send icons created by
+                                Freepik - Flaticon</a>
+                        </li>
+                        <li>
+                            <a href="https://www.flaticon.com/free-icons/save" title="save icons">Save icons created by
+                                mavadee - Flaticon</a>
                         </li>
                     </ul>
 

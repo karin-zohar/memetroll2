@@ -6,31 +6,42 @@
     box-sizing: border-box;
     border: 3px solid var(--clr1);
     border-radius: 2em;
-    padding-block: 1em;
+    padding: 1em;
     height: var(--canvas-height);
 }
 
 .tools-container-layout {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-areas: 
-    "add-text add-text add-text add-text add-line delete"
-    "fill-color fill-color stroke-color stroke-color bigger-font smaller-font"
-    "move-up move-down align align font font"
-    "save save download download share share";
+    "add-text add-text add-text add-text add-line"
+    ". move-up move-down delete ."
+    "bigger-font smaller-font align-left align-center align-right"
+    "font font font fill-color stroke-color"
+    "download save save share share"
+    ;
 }
 
 .tool-btn {
+    box-sizing: border-box;
     height: 30px;
     margin: auto;
-    padding: 0.5rem;
+    padding: 0.2rem;
     width: 80%;
     text-align: center;
     border-radius: 2em;
-    border: 2px solid var(--clr1);
+    font-size: 1em;
+    border: none;
     background-color: lavender;
     cursor: pointer;
+}
+
+.tool-btn img {
+    object-fit: contain;
+    width: 1em;
+    margin-block: auto;
+    margin-inline-end:0.3em;
 }
 
 .tool-btn:hover {
@@ -38,59 +49,42 @@
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-.tool-btn::after {
+.tool-btn::before {
     font-family: fa-regular;
-    padding-inline: 0.5m;
+    margin-inline-end: 0.5em;
 }
 
 .tool-btn-large {
     box-sizing: border-box;
     padding-block-end: 2.5em;
 }
-.color-label {
-    box-sizing: border-box;
-    margin:auto;
-    text-align: center;
-    text-shadow: 2px 2px var(--clr1);
-    letter-spacing: 0.2rem;
-    color: var(--clr2);
-    font-weight: 700;
-    padding: 10px;
-    width: 90px;
-    height: 40px;
-    border-radius: 2rem;
-    border: 2px solid var(--clr1);
-    cursor: pointer;
-    background-image: linear-gradient(90deg, #FF0000 0%, #FF9600 12%, #FFFA00 26%, #1EFF00 37%, #00AAFF 58%, #8B00FF 74%, #8B00FF 74%, #8B00FF 87%, #8B00FF 100%);
-}
-
-.color-label:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
 
 .add-text-input {
     grid-area: add-text;
-    margin: 0.5rem;
-    width: 150px;
+    margin: auto;
+    width: 80%;
 }
 
 .add-line-btn {
     grid-area: add-line;
+    background: none;
+    color: var(--clr1);
+    font-size: 1em;
+    text-align: center;
 }
 
-.add-line-btn::after {
+.add-line-btn::before {
     content: '\2b'
 }
 .delete-line-btn {
     grid-area: delete;
 }
-.delete-line-btn::after {
+.delete-line-btn::before {
     content: '\f2ed';
 }
 
 input[type="color"] {
-    opacity: 0;
-    pointer-events: none;
+    display:none;
 }
 
 .fill-color-label {
@@ -98,10 +92,13 @@ input[type="color"] {
 }
 .stroke-color-label {
     grid-area: stroke-color;
+    margin-inline-end: 0;
+    width: 100%;
 }
 
 .bigger-font-btn {
     grid-area: bigger-font;
+    margin-inline-start: 0;
 }
 .smaller-font-btn {
     grid-area: smaller-font;
@@ -109,45 +106,59 @@ input[type="color"] {
 
 .text-font-select {
     grid-area: font;
-}
-
-.align-select {
-    grid-area: align;
+    width: 100%;
+    /* margin-inline-start: 0; */
 }
 
 .move-line-up-btn {
     grid-area: move-up;
 }
-.move-line-up-btn::after {
-    content: '\f151'
-}
+
 .move-line-down-btn {
     grid-area: move-down;
 }
-.move-line-down-btn::after {
-    content: '\f150'
+
+.move-line-down-btn img {
+    transform: rotate(180deg);
 }
 
 .save-meme-btn {
     grid-area: save;
 }
-.save-meme-btn::after {
-    content: '\f0c7'
+
+a.download-btn {
+    grid-area: download;
+    font-family: Lato, sans-serif;
+    color: inherit;
+    line-height: 33px;
+    margin-inline-start: 0;
+    width: 100%;
 }
 
-.download-btn {
-    grid-area: download;
-    padding: 0;
-    line-height: 33px;
-}
-.download-btn::after {
-    content: '\f358';
-    color: black;
+.download-btn img {
+    margin-block-end: 2px;
 }
 
 .share-btn {
     grid-area: share;
+    margin-inline-end: 0;
+    width: 100%;
 }
-.share-btn::after {
-    content: '\f14d'
+
+.share-btn img {
+    width: 0.8em;
+}
+
+.align-left {
+    grid-area: align-left;
+}
+
+.align-center {
+    grid-area: align-center;
+}
+
+.align-right {
+    grid-area: align-right;
+    margin-inline-end: 0;
+    width: 100%;
 }

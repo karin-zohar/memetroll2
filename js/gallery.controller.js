@@ -25,7 +25,7 @@ function renderMyMemesGallery() {
     const elMyMemesGalleryContainer = document.querySelector('.my-memes-gallery-container')
     const elNoMemesMsg =  document.querySelector('.no-memes-msg')
     let strHTML = ''
-    if (getUserMemes.length) {
+    if (savedMemes.length) {
         strHTML = savedMemes.map(meme => `
         <img onclick="onOpenSavedMeme('${meme.savedMemeId}')" class="gallery-img ${meme.savedMemeId}" src="${meme.flatImg}" alt="new saved meme">
         `)

@@ -6,7 +6,7 @@
     /* sizes */
     --site-width: max-content;
     --layout-padding: 1rem;
-    --gallery-padding: 1px;
+    --gallery-size: 90%;
     --canvas-height: 300px;
     --logo-size: 1.2em;
     --canvas-margin: auto;

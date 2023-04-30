@@ -127,7 +127,6 @@ function getNextLine() {
 function saveMeme(newFlatImg) {
     gMeme['flatImg'] = newFlatImg
     gMeme['savedMemeId'] = makeId()
-    console.log('gMeme: ', gMeme)
     gUserMemes.push(gMeme)
     _saveMemeToStorage()
 }

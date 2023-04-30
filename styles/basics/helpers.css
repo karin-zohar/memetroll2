@@ -21,12 +21,16 @@
     border: none;
 }
 
+.clean-label {
+    font-size: .8em;
+}
+
 .btn {
     background-color: var(--clr1);
     border: none;
     color: var(--clr2);
-    font-weight: 600;
-    padding: 1em;
+    text-align: center;
+    padding: 0.5em;
     border-radius: 2em;
     margin: 0.5em;
     transition: 0.5s;
@@ -34,7 +38,6 @@
 
 .btn:hover {
     background-color: var(--clr2);
-    border: 3px solid var(--clr1);
     color: var(--clr1);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -52,4 +55,8 @@
 
 .m-1 {
     margin: 1rem;
+}
+
+.none {
+    display: none;
 }

@@ -5,12 +5,12 @@ let gElCanvas
 let gCtx
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 let canvasHeight = 300
+let canvasWidth = 500
 
 function initCanvas() {
     gElCanvas = document.querySelector('canvas')
     gCtx = gElCanvas.getContext('2d')
     resizeCanvas()
-    // resizeEditor()
     setFirstLineCoords()
     renderMeme()
 }
@@ -42,23 +42,15 @@ function resizeCanvas() {
     gElCanvas.height = elContainer.offsetHeight
 }
 
-function resizeEditor() {
-    const elEditor = document.querySelector('.editor-layout')
-    const scaleX = window.innerWidth / gElCanvas.width;
-    const scaleY = window.innerHeight / gElCanvas.height;
-    const scaleToFit = Math.min(scaleX, scaleY);
-    elEditor.style.transformOrigin = "0 0"; //scale from top left
-    elEditor.style.transform = `scale(${scaleToFit})`;
-}
-
 function adjustCanvasContainerSize(templateId) {
-    console.log('adjusting')
     const elImg = document.querySelector(`.${templateId}`)
     const elContainer = document.querySelector('.canvas-container')
-    canvasHeight = elContainer.offsetHeight
+    canvasWidth = elContainer.offsetWidth
     const { imgHeight, imgWidth } = getImgSize(elImg)
-    const newCanvasWidth = (canvasHeight * imgHeight) / imgWidth
-    elContainer.width = newCanvasWidth
+    const newCanvasHeight = (canvasWidth * imgHeight) / imgWidth
+    elContainer.height = newCanvasHeight
+    console.log('elContainer.height: ', elContainer.offsetHeight)
+    console.log('elContainer.width: ', elContainer.offsetWidth)
     resizeCanvas()
 }
 
@@ -148,6 +140,7 @@ function onMoveLineVertically(diff) {
 function onSaveMeme() {
     console.log('saving meme')
     const newFlatImg = createImgFromCanvas(gElCanvas)
+    console.log('newFlatImg: ', newFlatImg)
     saveMeme(newFlatImg)
     renderMyMemesGallery()
     alert('Saved successfully to my memes!')

@@ -1,8 +1,9 @@
- @media (min-width: 400px) {
+ @media (min-width: 420px) {
     :root {
-        --canvas-height: 400px;
+        /* --canvas-height: 500px; */
         --site-width: 90%;
         --canvas-margin: 50px auto;
+        --gallery-size: 80%;
     } 
 
     /* header*/
@@ -37,7 +38,7 @@
      /* gallery  */
      .gallery-header {
         grid-template-rows: 1fr;
-        grid-template-areas: "search keywords upload feeling-lucky";
+        grid-template-areas: "search search keywords upload feeling-lucky";
         margin:auto;
      }
  }

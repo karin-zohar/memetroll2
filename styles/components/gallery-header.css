@@ -1,10 +1,13 @@
 .gallery-header {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    margin: auto;
+    padding-top: 2rem;
+    width: var(--gallery-size);
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
     grid-template-areas: 
-    "keywords keywords"
-    "search search"
+    "keywords keywords "
+    "search search "
     "upload feeling-lucky";
 }
 
@@ -20,12 +23,17 @@
 
 .feeling-lucky-btn {
     grid-area: feeling-lucky;
+    font-size: 1rem;
+    align-self: end;
+    margin-inline-end:0;
 }
 
 #keyword-search {
     grid-area: search;
-    width: 90%; 
-    margin: auto;
+    width: 100%;
+    min-width: 15rem;
+    text-align: center;
+    margin-inline-start: 0;
 }
 
 .keywords-container {
