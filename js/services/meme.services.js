@@ -131,6 +131,39 @@ function saveMeme(newFlatImg) {
     _saveMemeToStorage()
 }
 
+function isLineClicked(clickedPos, line) {
+    const { pos } = line
+    const yTop = pos.y - line.fontSize / 2 + 2
+    const yBottom = pos.y + line.fontSize / 2 + 2
+    return (clickedPos.line < yTop && clickedPos.line > yBottom)
+}
+
+
+function resizeCanvas() {
+    const elContainer = document.querySelector('.canvas-container')
+    gElCanvas.width = elContainer.offsetWidth
+    gElCanvas.height = elContainer.offsetHeight
+}
+
+function getEvPos(ev) {
+    // Gets the offset pos , the default pos
+    let pos = {
+        x: ev.offsetX,
+        y: ev.offsetY,
+    }
+    if (TOUCH_EVS.includes(ev.type)) {
+        ev.preventDefault()
+        ev = ev.changedTouches[0]
+        pos = {
+            x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
+            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
+        }
+    }
+    return pos
+}
+
+
+
 
 function setUserMemes() {
     gUserMemes = _loadMemeFromStorage()

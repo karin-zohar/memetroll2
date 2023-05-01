@@ -174,3 +174,15 @@ function EnableSharing() {
     })
 }
 
+
+function onCanvas(ev) {
+    const pos = getEvPos(ev)
+    const meme = getMemeSettings()
+    meme.lines.forEach((line, idx) => {
+        if (isLineClicked(pos, line)) {
+            updateMemeSettings('selectedLineIdx', idx)
+        }
+    }
+    )
+
+}
