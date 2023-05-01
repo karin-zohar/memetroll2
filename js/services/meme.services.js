@@ -132,10 +132,10 @@ function saveMeme(newFlatImg) {
 }
 
 function isLineClicked(clickedPos, line) {
-    const { pos } = line
-    const yTop = pos.y - line.fontSize / 2 + 2
-    const yBottom = pos.y + line.fontSize / 2 + 2
-    return (clickedPos.line < yTop && clickedPos.line > yBottom)
+    const { coords } = line
+    const yTop = coords.y - line.fontSize / 2 + 2
+    const yBottom = coords.y + line.fontSize / 2 + 2
+    return (clickedPos.y > yTop && clickedPos.y < yBottom)
 }
 
 
@@ -146,7 +146,6 @@ function resizeCanvas() {
 }
 
 function getEvPos(ev) {
-    // Gets the offset pos , the default pos
     let pos = {
         x: ev.offsetX,
         y: ev.offsetY,
